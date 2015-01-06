@@ -1,1 +1,1 @@
-web: python app.py
+web:    java -cp target/classes:target/dependency/* Main
