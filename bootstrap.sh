@@ -5,5 +5,5 @@ vagrant ssh -- "wget -qO- https://raw.github.com/progrium/dokku/v0.3.12/bootstra
 
 cat ~/.ssh/id_rsa.pub | vagrant ssh -- sudo sshcommand acl-add dokku ${USER}
 
-git remote add dokku dokku@dokku.me:vagrant-dokku-pg-java
+#git remote add dokku dokku@dokku.me:vagrant-dokku-pg-java
 
