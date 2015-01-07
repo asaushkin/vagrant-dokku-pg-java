@@ -1,8 +1,6 @@
 #!/bin/bash
 
-apt-get -y install htop apg
-
-apg -m 12 -x 12 -n 1 > 
+apt-get -y install htop 
 
 /vagrant/install.d/02-postgresql-single
 
