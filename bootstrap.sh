@@ -10,8 +10,11 @@ vagrant reload
 
 vagrant ssh -- "dokku postgresql:start"
 
-echo "10.0.0.2   dokku.me" | sudo tee -a /etc/hosts >/dev/null
+if [ $(cat /etc/hosts | grep '\sdokku.me' | wc -l) -eq 0 ]; then
+    echo "10.0.0.2   dokku.me" | sudo tee -a /etc/hosts >/dev/null
+fi
 
+ssh-keygen -f "${HOME}/.ssh/known_hosts" -R dokku.me
 ssh -o StrictHostKeyChecking=no dokku@dokku.me postgresql:status
 
 git remote add dokku dokku@dokku.me:vagrant-dokku-pg-java
